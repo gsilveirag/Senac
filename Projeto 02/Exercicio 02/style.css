@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.imgSenac{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    
+}
+
+.imgSenac img{
+    width: 100px;
+}
+
+.container{
+    background-color: blue;
+    min-width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form{
+    background-color: aliceblue;
+    padding: 10px 20px;
+}
