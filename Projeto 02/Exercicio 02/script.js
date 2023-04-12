@@ -56,6 +56,30 @@ class Produto {
         localStorage.meuArray = JSON.stringify(array)
         dados.innerHTML = ''
     }
+
+    remove(){
+        dados.innerHTML = ''
+    if(localStorage.meuArray){
+        array = JSON.parse(localStorage.getItem('meuArray'))
+    }
+    
+        const map = new Map()
+
+        array.forEach(element => {
+            map.set(element.nome, element)
+        });
+        console.log(map)
+
+        
+        const listaUnica = Array.from(map.values())
+        console.log(listaUnica)
+    
+        for(let i = 0; i < listaUnica.length; i++){
+            array.push(listaUnica[i])
+            localStorage.meuArray = JSON.stringify(array)
+        }
+    }    
+    
 }
 
 const produto = new Produto()
