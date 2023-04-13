@@ -43,7 +43,7 @@ class Produto {
             array = JSON.parse(localStorage.getItem('meuArray'))
         }
         
-        for (let i = 0; i < array.length; i++){
+        for (let i = 0; i < array.length; i++){ // funcao para imprimir na tela tudo salvo
             let trNome = document.createElement('li')
             trNome.innerText = "Nome: " +array[i].nome + " Codigo: " +array[i].codigo
             dados.appendChild(trNome)
@@ -52,9 +52,9 @@ class Produto {
     }
 
     limpar(){
-        array = []
-        localStorage.meuArray = JSON.stringify(array)
-        dados.innerHTML = ''
+        array = [] // zera o array
+        localStorage.meuArray = JSON.stringify(array) // envia o array zerado
+        dados.innerHTML = '' // limpa a tela
     }
 
     remove(){
@@ -65,21 +65,31 @@ class Produto {
     
         const map = new Map()
 
-        array.forEach(element => {
+        array.forEach(element => { // percorre todo o array e elimina o nome duplicado
             map.set(element.nome, element)
         });
-        console.log(map)
 
         
-        const listaUnica = Array.from(map.values())
-        console.log(listaUnica)
+        const listaUnica = Array.from(map.values()) // envia para o novo array sem nada duplicado
+        array = [] //zera o antigo array
     
-        for(let i = 0; i < listaUnica.length; i++){
+        for(let i = 0; i < listaUnica.length; i++){ //puxa os dados da nova lista e manda separado para a antiga
             array.push(listaUnica[i])
             localStorage.meuArray = JSON.stringify(array)
         }
     }    
     
+
+    apagar(){
+        dados.innerHTML = ''
+        if(localStorage.meuArray){
+            array = JSON.parse(localStorage.getItem('meuArray'))
+        }
+
+        array.pop()
+        array.push()
+        localStorage.meuArray = JSON.stringify(array)
+    }
 }
 
 const produto = new Produto()

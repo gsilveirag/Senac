@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Link Script -->
+    <!-- Script -->
     <script src="/script.js" defer></script>
 
     <!-- Css -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/d24f7f7763.js" crossorigin="anonymous" defer></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,10 +39,11 @@
 
             
             <div class="btn">
-                <button onclick="produto.adicionar()">Salvar</button>
+                <button onclick="produto.adicionar()"><i class="fas fa-check"></i></button>
                 <button onclick="produto.recuperar()">Recuperar</button>
-                <button onclick="produto.limpar()">Limpar</button>
+                <button onclick="produto.limpar()"><i class="fas fa-trash"></i></button>
                 <button onclick="produto.remove()">Duplicados</button>
+                <button onclick="produto.apagar()"><i class="fas fa-times"></i></button>
             </div>
         </div>
 
