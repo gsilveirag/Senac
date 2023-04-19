@@ -6,6 +6,7 @@ class Produto {
         this.id = 1
         this.nome = document.getElementById('nome').value
         this.codigo = document.getElementById('codigo').value
+        this.editId = null 
     }
 
     adicionar(){
@@ -14,6 +15,7 @@ class Produto {
             id : this.id,
             nome : nome.value,
             codigo : codigo.value
+    
         }
         
         let eVazio = !Object.values(novoItem).every(x => x !== null && x !== '')
@@ -22,17 +24,20 @@ class Produto {
         alert("Faltam dados.")
         return;
         }else{
-
-            if(localStorage.meuArray){ // verifica se ja existe
-                array = JSON.parse(localStorage.getItem('meuArray')) // ele puxa e converte
+            if(this.editId == null){
+                if(localStorage.meuArray){ // verifica se ja existe
+                    array = JSON.parse(localStorage.getItem('meuArray')) // ele puxa e converte
+                }
+                array.push(novoItem) // adiciona as info no array
+    
+                this.id++
+                localStorage.meuArray = JSON.stringify(array) // converte em String e armazena no meuArray)
+    
+                this.recuperar() // chama o metodo para mostrar os elementos
+                this.limpar() // limpa a tela apos enviar
+            }else {
+                this.atualizar(this.editId , novoItem)
             }
-            array.push(novoItem) // adiciona as info no array
-
-            this.id++
-            localStorage.meuArray = JSON.stringify(array) // converte em String e armazena no meuArray)
-
-            this.recuperar() // chama o metodo para mostrar os elementos
-            this.limpar() // limpa a tela apos enviar
         }   
     }
 
@@ -53,15 +58,15 @@ class Produto {
             let tdAcao = tr.insertCell()
             
             tdId.innerText = array[i].id
-            tdNome.innerText = array[i].nome
-            tdCodigo.innerText = array[i].codigo
+            tdNome.innerText =  array[i].nome
+            tdCodigo.innerText = "R$" + array[i].codigo
             
             let iconEdit = document.createElement('img')
             iconEdit.src = 'img/edit_icon.png'
-            iconEdit.setAttribute("onclick", "produto.editar(" + array[i].id  +")")
+            iconEdit.setAttribute("onclick", "produto.editar(" + JSON.stringify(array[i])  +")")
 
             let iconDelete = document.createElement('img')
-            iconDelete.src = 'img/delete_icon.png'
+            iconDelete.src = '/img/delete_icon.png'
             iconDelete.setAttribute("onclick", "produto.apagar("+  array[i].id +")")
 
 
@@ -73,6 +78,8 @@ class Produto {
     limpar(){
         document.getElementById('nome').value = '' // limpa os dados
         document.getElementById('codigo').value = '' // limpa os dados
+        document.getElementById('btnChange').innerText = "Salvar"
+        this.editId = null
     }
 
     remove(){
@@ -100,16 +107,29 @@ class Produto {
         }
     }
 
-    editar(id){
-        if(localStorage.meuArray){
-            array = JSON.parse(localStorage.getItem('meuArray'))
-        }
-        
+    editar(dadosArray){
+        this.editId = dadosArray.id
+
+        document.getElementById('btnChange').innerText = "Atualizar"
+
+       document.getElementById('nome').value = dadosArray.nome
+       document.getElementById('codigo').value = dadosArray.codigo
+    }
+
+    atualizar(id, novoItem){
         for(let i= 0; i < array.length; i++){
             if(array[i].id === id){
-                document.getElementById('nome').value = array[i].nome
-                document.getElementById('codigo').value = array[i].codigo
-        }
+                array[i].nome = novoItem.nome
+                array[i].codigo = novoItem.codigo
+
+                array.push() // adiciona as info no array
+    
+                
+                localStorage.meuArray = JSON.stringify(array) // converte em String e armazena no meuArray)
+    
+                this.recuperar() // chama o metodo para mostrar os elementos
+                this.limpar() // limpa a tela apos enviar
+            }
         }
     }
 }
