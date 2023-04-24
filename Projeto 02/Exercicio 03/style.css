@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* BODY */
@@ -30,21 +33,84 @@ main{
 /* Formulario */
 .formularioCadastro{
     border: 1px solid black;
-    padding: 40px 20px;
+    padding: 35px 20px;
     border-radius: 10px;
+    background-color: rgb(228, 226, 241);
 }
 .titulo{
-    background-color: rgb(245, 236, 223);
+    background-color: rgb(245, 163, 120);
     text-align: center;
     position: relative;
-    bottom: 30px;
+    bottom: 10px;
+    font-size: 20px; 
+}
+.form{
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: 15px;
+}
+div div label{
+    font-size: 15px;
+}
+div div input{
+    width: 100%;
+    padding: 6px 5px;
+    border-radius: 8px;
+    border: 1px solid sandybrown;
+}
+#radioDiv{
+    background-color: rgb(243, 237, 240);
+    padding: 20px 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#radioOpcao{
+    display: flex;
+    align-items: center;
+    width: 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 100px;
+}
+#radioEscolha{
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    padding: 5px 0px;
+}
+.btn button{
+    padding: 5px;
+    color: rgb(42, 41, 41);
+    border: 1px solid salmon;
+    border-radius: 3px;
+    width: 100%;
+}
+.btn button:hover{
+    cursor: pointer;
+    color: salmon;
 }
 
 /* Login */
 .formularioLogin{
     border: 1px solid black;
-    padding: 40px 30px;
+    padding: 35px 20px;
     border-radius: 10px;
+    background-color: rgb(228, 226, 241);
 }
 
 /* FOOTER */
@@ -69,7 +135,27 @@ img{
 }
 
 #imgEmail{
-    width: 13px;
-    position: absolute;
-    left: 53px;
+    bottom: 23px;
+    left: 340px;
+    position: relative; 
+}
+
+.imgSenha{
+    position: relative;
+    bottom: 23px;
+    left: 340px;
+}
+
+/* RESPOSIVIDADE */
+@media (max-width: 375px ){
+    body{
+        width: 100%;
+        height: 100%;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+
 }

@@ -2,7 +2,8 @@
 <html lang="pt-br">
 <head>
     <!-- Script -->
-    <script src="/script.js"></script>
+    <script src="/login.js" defer></script>
+    <script src="/cadastro.js" defer></script>
 
     <!-- Css -->
     <link rel="stylesheet" href="style.css">
@@ -24,37 +25,38 @@
     <!-- Formulario de Cadastro -->
     <div class="formularioCadastro">
         <div class="titulo">
-            <h3>Formulario de Cadastro</h3>
+            <h4>Formulario de Cadastro</h4>
         </div>
 
         <div class="form">
             <div>
                 <label for="nome">Nome: </label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>
+                <input type="text" id="nome" placeholder=" Digite seu nome" required>
             </div>
 
             <div>
                 <label for="sobrenome">Sobrenome: </label>
-                <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                <input type="text" id="sobrenome" placeholder=" Digite seu sobrenome" required>
             </div>
 
            <div>
                 <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone">
+                <input type="tel" id="telefone" placeholder="(xx)xxxxx-xxxx">
            </div>
 
-           <div>
-                <label for="documento">Documento: </label>
-                <div>
+           <div id="radioDiv">
+                <div id="radioOpcao">
+                    <label for="documento">Documento: </label>
                     <input type="radio" name="documento" >
                     <label for="documentoRG">RG</label>
                     <input type="radio" name="documento">
                     <label for="documentoCPF">CPF</label>
-                    <div>
+                </div>
+                    <div id="radioEscolha">
                         <label for="documento">RG</label>
                         <input type="number" id="rg">
                     </div>
-                </div>
+                
            </div>
 
            <div >
@@ -71,39 +73,47 @@
         </div>
     </div>
 
-    <!-- Usuario e Senha -->
+    <!-- Formulario de Login -->
     <div class="formularioLogin">
         <div class="login">
-            <h4>Entre com seu Login:</h4>
-            <div>
-                <label for="email">Email: </label>
-                <input type="email" id="email" placeholder="         email@email.com.br" required>
-                <span><img id="imgEmail" src="./img/email.png" alt=""></span>
-            </div> 
-
-            <div>
-                <label for="password">Password: </label>
-                <input type="password" id="password" required>
+            <div class="titulo">
+                <h4>Cadastre seu Login:</h4>
             </div>
-
-            <div>
-                <label for="passwordConfirm">Confirmação do Password: </label>
-                <input type="password" id="passwordConfirm">
+            
+            <div class="form">
+                <div>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" placeholder="email@email.com.br" required>
+                    <span><img id="imgEmail" src="./img/email.png" alt=""></span>
+                </div> 
+    
+                <div>
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" required>
+                    <span><img class="imgSenha" src="./img/senha.png" alt=""></span>
+                </div>
+    
+                <div>
+                    <label for="passwordConfirm">Confirmação do Password: </label>
+                    <input type="password" id="passwordConfirm" required>
+                    <span><img class="imgSenha" src="./img/senha.png" alt=""></span>
+                </div>
+    
             </div>
 
             <div class="btn">
-                <button onclick="">Enviar</button>
-                <button onclick="">Cancelar</button>
+                <button onclick="login.salvar()">Enviar</button>
+                <button onclick="login.cancelar()">Cancelar</button>
             </div>
        </div>
     </div>
    </main>
 
    <footer>
-        <a href="http://"><img src="./img/twitter.png" alt="twitterGustavo"></a>
-        <a href="http://"><img src="./img/github.png" alt="gitGustavo"></a>
-        <a href="http://"><img src="./img/linkedin.png" alt="linkedinGustavo"></a>
-        <a href="http://"><img src="./img/instagram.png" alt="instaGustavo"></a>
+        <a href="https://www.instagram.com/gustavo_goncalvess/" target="_blank"><img src="./img/twitter.png" alt="twitterGustavo"></a>
+        <a href="https://github.com/gsilveirag" target="_blank"><img src="./img/github.png" alt="gitGustavo"></a>
+        <a href="https://www.linkedin.com/in/gustavo-gon%C3%A7alves-0a57491a4/" target="_blank"><img src="./img/linkedin.png" alt="linkedinGustavo"></a>
+        <a href="https://www.instagram.com/gustavo_goncalvess/" target="_blank"><img src="./img/instagram.png" alt="instaGustavo"></a>
    </footer>
     
 </body>

@@ -17,7 +17,7 @@ class Formulario {
         let cadastro = this.lerDados()
 
         if(this.validarCampos(cadastro) === true){
-            alert("Salvo !")
+            this.adcionar(cadastro)
         }
         
     }
@@ -43,8 +43,20 @@ class Formulario {
     
         }
         
+        
         return true
         
+    }
+
+    adcionar(cadastro){
+
+        if(localStorage.meuArray){
+            array = JSON.parse(localStorage.getItem('meuArray'))
+        }
+
+        this.arrayCadastro.push(cadastro)
+        this.id++
+        localStorage.meuArray = JSON.stringify(this.arrayCadastro)
     }
 
     cancelar(){
@@ -52,7 +64,6 @@ class Formulario {
         document.getElementById('sobrenome').value = ' '
         document.getElementById('telefone').value = ' '
         document.getElementById('rg').value = ' '
-        document.getElementById('cpf').value = ' '
     }
 
 }
