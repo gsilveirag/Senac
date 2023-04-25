@@ -15,7 +15,7 @@ class Formulario {
 
     salvar(){
         let cadastro = this.lerDados()
-
+        
         if(this.validarCampos(cadastro) === true){
             this.adcionar(cadastro)
         }
@@ -29,6 +29,8 @@ class Formulario {
         cadastro.nome = document.getElementById('nome').value
         cadastro.sobrenome = document.getElementById('sobrenome').value
         cadastro.telefone = document.getElementById('telefone').value
+        cadastro.rg = document.getElementById('rg').value
+        cadastro.cpf = document.getElementById('cpf').value
 
         return cadastro
     }
@@ -36,7 +38,7 @@ class Formulario {
     validarCampos(cadastro){
         let eVazio = !Object.values(cadastro).every(x => x !== null && x !== '')
 
-
+        
         if(eVazio){
             alert("Atenção ! Faltam dados.")
             return false
@@ -51,7 +53,7 @@ class Formulario {
     adcionar(cadastro){
 
         if(localStorage.meuArray){
-            array = JSON.parse(localStorage.getItem('meuArray'))
+           var arrayCadastro = JSON.parse(localStorage.getItem('meuArray'))
         }
 
         this.arrayCadastro.push(cadastro)
@@ -64,8 +66,44 @@ class Formulario {
         document.getElementById('sobrenome').value = ' '
         document.getElementById('telefone').value = ' '
         document.getElementById('rg').value = ' '
+        document.getElementById('cpf').value = ' '
     }
 
+    radioEscolha(){
+        const opcao = document.getElementById('radioEscolha')
+        const valor = document.querySelector('input[name="documento"]:checked').value
+        debugger
+        
+
+        if( valor.value === "rg"){
+        const label = document.createElement('label')
+        const input = document.createElement('input')
+
+        label.innerHTML = 'rg: ',
+        input.setAttribute('type', 'number')
+    
+        opcao.appendChild(label)
+        opcao.appendChild(input)
+
+        opcao.removeChild(labelCpf)
+        opcao.removeChild(inputCpf)
+        
+        }else{
+        const labelCpf = document.createElement('label')
+        const inputCpf = document.createElement('input')
+
+        labelCpf.innerHTML = 'CPF: ',
+        inputCpf.setAttribute('type', 'number')
+    
+        opcao.appendChild(labelCpf)
+        opcao.appendChild(inputCpf)
+
+        opcao.removeChild(label)
+        opcao.removeChild(input)
+        
+        }
+       
+    }
 }
 
 var formulario = new Formulario ()

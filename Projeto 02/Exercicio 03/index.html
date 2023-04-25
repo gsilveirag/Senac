@@ -47,14 +47,13 @@
            <div id="radioDiv">
                 <div id="radioOpcao">
                     <label for="documento">Documento: </label>
-                    <input type="radio" name="documento" >
+                    <input type="radio" name="documento" id="rg" value="rg" onchange="formulario.radioEscolha()"  >
                     <label for="documentoRG">RG</label>
-                    <input type="radio" name="documento">
+                    <input type="radio" name="documento" id="cpf" value="cpf" onchange="formulario.radioEscolha()">
                     <label for="documentoCPF">CPF</label>
                 </div>
                     <div id="radioEscolha">
-                        <label for="documento">RG</label>
-                        <input type="number" id="rg">
+                        
                     </div>
                 
            </div>
