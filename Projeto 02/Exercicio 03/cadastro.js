@@ -70,38 +70,32 @@ class Formulario {
     }
 
     radioEscolha(){
+    
         const opcao = document.getElementById('radioEscolha')
         const valor = document.querySelector('input[name="documento"]:checked').value
-        debugger
-        
+        opcao.innerHTML = "";
 
-        if( valor.value === "rg"){
-        const label = document.createElement('label')
-        const input = document.createElement('input')
+        if( valor === "RG"){
+            const input = document.createElement('input')
 
-        label.innerHTML = 'rg: ',
-        input.setAttribute('type', 'number')
-    
-        opcao.appendChild(label)
-        opcao.appendChild(input)
+            input.setAttribute('placeholder', "Digite seu " + valor + "...")
+            input.setAttribute('type', 'number')
 
-        opcao.removeChild(labelCpf)
-        opcao.removeChild(inputCpf)
+
+            opcao.appendChild(input)
+
         
         }else{
-        const labelCpf = document.createElement('label')
-        const inputCpf = document.createElement('input')
+            const input = document.createElement('input')
 
-        labelCpf.innerHTML = 'CPF: ',
-        inputCpf.setAttribute('type', 'number')
+            input.setAttribute('placeholder', "Digite seu " + valor + "...")
+            input.setAttribute('type', 'number')
     
-        opcao.appendChild(labelCpf)
-        opcao.appendChild(inputCpf)
-
-        opcao.removeChild(label)
-        opcao.removeChild(input)
+            opcao.appendChild(input)
         
         }
+
+        
        
     }
 }

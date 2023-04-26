@@ -163,5 +163,22 @@ img{
         left: 40px;
     }
 
+    @media (max-width: 414px ){
+        #imgEmail{
+            display: none;
+        }
+        .imgSenha{
+            display: none;
+        }
+    }
+    
+    @media (max-width: 280px){
+        #radioOpcao{
+            position: relative;
+            left: 1px;
+        }
+    }
+    
+
 
 }
