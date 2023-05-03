@@ -22,7 +22,7 @@ header{
 /* MAIN */
 main{
     background-color: rgb(189, 189, 228);
-    height: 83vh;
+    height: 84vh;
     display: flex;
     align-items: center;
     justify-content: center;
