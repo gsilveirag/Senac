@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* BODY */
+body{
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* HEADER */
+header{
+    padding: 2px 0px;
+    text-align: center;
+}
+
+/* MAIN */
+main{
+    background-color: rgb(189, 189, 228);
+    height: 84vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Formulario */
+.formularioCadastro{
+    border: 1px solid black;
+    padding: 35px 20px;
+    border-radius: 10px;
+    background-color: rgb(228, 226, 241);
+}
+.titulo{
+    background-color: rgb(245, 163, 120);
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+    font-size: 20px; 
+}
+.form{
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: 15px;
+}
+div div label{
+    font-size: 15px;
+}
+div div input{
+    width: 100%;
+    padding: 6px 5px;
+    border-radius: 8px;
+    border: 1px solid sandybrown;
+}
+#radioDiv{
+    background-color: rgb(243, 237, 240);
+    padding: 20px 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#radioOpcao{
+    display: flex;
+    align-items: center;
+    width: 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 100px;
+}
+#radioEscolha{
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    padding: 5px 0px;
+}
+.btn button{
+    padding: 5px;
+    color: rgb(42, 41, 41);
+    border: 1px solid salmon;
+    border-radius: 3px;
+    width: 100%;
+}
+.btn button:hover{
+    cursor: pointer;
+    color: salmon;
+}
+
+/* Login */
+.formularioLogin{
+    border: 1px solid black;
+    padding: 35px 20px;
+    border-radius: 10px;
+    background-color: rgb(228, 226, 241);
+}
+
+/* FOOTER */
+footer{
+    background-color: rgb(230, 227, 248);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
+/* IMAGENS */
+img{
+    width: 16px;
+}
+
+#logoSenac{
+    width: 150px;
+}
+
+#imgEmail{
+    bottom: 23px;
+    left: 340px;
+    position: relative; 
+}
+
+.imgSenha{
+    position: relative;
+    bottom: 23px;
+    left: 340px;
+}
+
+/* RESPOSIVIDADE */
+@media (max-width: 1024px ){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    main{
+        padding: 10px 10px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #radioOpcao{
+        position: relative;
+        left: 40px;
+    }
+
+    @media (max-width: 414px ){
+        #imgEmail{
+            display: none;
+        }
+        .imgSenha{
+            display: none;
+        }
+    }
+    
+    @media (max-width: 280px){
+        #radioOpcao{
+            position: relative;
+            left: 1px;
+        }
+    }
+    
+
+
+}

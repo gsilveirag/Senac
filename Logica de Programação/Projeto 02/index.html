@@ -1,0 +1,49 @@
+<!--10 labels com 10 inputs
+        botao para salvar
+botão para resgatar os dados salvos no localstorage -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Link Css -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Link Script -->
+    <script src="/script.js" defer></script>
+
+    <!-- Link Icons -->
+    <script src="https://kit.fontawesome.com/d24f7f7763.js" defer crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios - Construtores</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h3>Formulario de Cadastro</h3>
+            <i class="fa-solid fa-moon"></i>
+        </div>
+        <form>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome">
+            </div>
+            <div>
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="email@email.com">
+            </div>
+        </form>
+        <div class="btn">
+            <button onclick="cliente.salvar()">Salvar</button>
+            <button onclick="cliente.recuperar()">Recuperar</button>
+        </div>
+    </div>
+    
+</body>
+</html>

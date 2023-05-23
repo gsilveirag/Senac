@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+.imgSenac{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.imgSenac img{
+    width: 100px;
+}
+
+.container{
+    background-color: rgb(189, 189, 228);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form{
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: aliceblue;
+    padding: 30px 40px;
+    box-shadow: 0px 30px 50px rgba(40, 28, 166, 0.993);
+}
+
+.titulo{
+    width: 100%;
+    background-color: rgb(218, 208, 196);
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input{
+    width: 100%;
+    padding: 20px;   
+}
+
+.input input{
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    border-color: rgb(168, 161, 152);
+}
+
+.input input:hover{
+    cursor: pointer;
+    border: 1px solid rgb(189, 189, 228);
+}
+
+.input label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.btn button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid rgb(235, 232, 232);
+    border-radius: 10px;
+}
+
+.btn button:hover{
+    cursor: pointer;
+    border: 1px solid darkcyan;
+    transition: 0.9s;
+    color: darkcyan;
+}
+
+.content{
+    overflow: auto;
+    height: 51%;
+    
+    background-color: aliceblue;
+    padding: 30px 40px;
+    box-shadow: 0px 30px 50px rgba(40, 28, 166, 0.993);
+}
+
+::-webkit-scrollbar{
+    height: 0px;
+    width: 10px;
+    background-color: aliceblue;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(189, 189, 228);
+}
+
+
+.content table{
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+}
+
+
+.content th {
+    border: 1px solid ;
+    width: 100%;
+    background-color: rgb(218, 208, 196);
+    text-align: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content td{
+    text-align: center;
+    padding: 5px;
+}
+
+.content td img{
+    border: none;
+    margin: 0px 5px;
+    background-color: aliceblue;
+    width: 15px;
+}
+
+.content td img:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
