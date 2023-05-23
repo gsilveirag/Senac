@@ -1,0 +1,56 @@
+/* Corpo */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    min-width: 100vw;
+    background-color: wheat;
+    border: 1px solid red;
+}
+
+
+/* Header */
+header{
+    width: 100% ;
+
+}
+.headerBtn{
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+    border: none;
+}
+.headerBtn button{
+    border: none;
+}
+
+/* Main */
+.container{
+    height: 90vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.quadradoUm{
+    padding: 10px;
+    height: 50vh;
+    width: 50vw;
+    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.quadradoDois{
+    padding: 10px;
+    height: 50vh;
+    width: 50vw;
+    border: 1px solid black;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
