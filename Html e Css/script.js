@@ -7,3 +7,7 @@ function mudarCorDeFundo(corFundo, corTexto, corBorda) {
   quadradoUm.style.borderColor = corBorda;
   quadradoDois.style.borderColor = corBorda;
   }
+
+  function enviado(){
+    alert("Formulario enviado!")
+  }
